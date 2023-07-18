@@ -1,9 +1,9 @@
-## Requisitos Frontend
+## Frontend Requirements
 
-1. Leer el current supply del smart contract
-2. Permitir el minteo de nfts si el contrato no está pausado
-3. permitir conectar cartera
-4. checkear que el usuario está en la red correcta
-5. tener un manejador del estado global de web3 con zustand
-6. implementar lógica del contador de numero de nfts a mintear
-7. mostrar mensajes de error al usuario ( insuficiente balance, no estas en la whitelist... )
+1. Read the current supply of the smart contract.
+2. Allow minting of NFTs if the contract is not paused.
+3. Enable wallet connection.
+4. Verify that the user is on the correct network.
+5. Have a global web3 state manager using Zustand.
+6. Implement logic for the NFT minting counter.
+7. Display error messages to the user (insufficient balance, not whitelisted, etc.).
