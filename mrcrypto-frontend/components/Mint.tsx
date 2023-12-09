@@ -20,7 +20,10 @@ const Mint = () => {
 
   async function getMint() {
     if (!nftcontractSigner) return;
-    if (paused == true) return; // true is paused, falso is not paused
+    if (paused == true) {
+      console.log("Smart Contract is paused");
+      return; // true is paused, falso is not paused
+    }
 
     if (typeof price === "undefined") {
       console.log("Price is not defined yet");
@@ -66,7 +69,7 @@ const Mint = () => {
   }
 
   const increment = () => {
-    if (count >= 5) return;
+    if (count >= 4) return;
     setCount(count + 1);
   };
 

@@ -1,1 +1,1 @@
-export const supportedChains = [5];
+export const supportedChains = [80001]; // Polygon Mumbai
