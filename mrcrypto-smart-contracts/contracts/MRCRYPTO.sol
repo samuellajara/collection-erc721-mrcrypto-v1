@@ -12,9 +12,9 @@ contract MRCRYPTO is ERC721Enumerable, Ownable {
 
     uint16 public immutable MAX_SUPPLY;
     uint8 public immutable MAX_PER_USER;
-    uint public COST_PER_NFT = 0.001 ether ;
+    uint public COST_PER_NFT = 0.000001 ether ;
     bool public whitelistOn;
-    bool public paused = true;
+    bool public paused = false;
     bool public revealed;
     string public baseURI;
 
@@ -25,7 +25,7 @@ contract MRCRYPTO is ERC721Enumerable, Ownable {
         string memory _name,
         string memory _symbol
     ) ERC721(_name, _symbol) {
-        MAX_SUPPLY = 1000;
+        MAX_SUPPLY = 10000;
         MAX_PER_USER = 5;
         baseURI = "https://apinft.racksmafia.com/api/";
         addAdmin(msg.sender);

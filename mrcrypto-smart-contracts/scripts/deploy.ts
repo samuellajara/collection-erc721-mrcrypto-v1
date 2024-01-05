@@ -7,8 +7,8 @@ async function main() {
 
   await mrc.deployed();
   await mrc.reveal();
-  await mrc.flipPause();
-  await mrc.mint(1, { value: ethers.utils.parseEther("0.001") });
+ // await mrc.flipPause();
+  await mrc.mint(1, { value: ethers.utils.parseEther("0.000001") });
   console.log(await mrc.tokenURI(1));
   console.log(mrc.address);
 
@@ -18,7 +18,7 @@ async function main() {
   };
 
   fs.writeFileSync(
-    "../mrcrypto-frontend/constants/constant.json",
+    "../mrcrypto-frontend/constants/constantMRC.json",
     JSON.stringify(constants)
   );
   console.log("Written constants");

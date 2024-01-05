@@ -3,9 +3,7 @@ pragma solidity ^0.8.7;
 
 import "erc721l/contracts/ERC721Linkable.sol";
 
-contract E7LSellDrugs is ERC721Linkable {
-    
-    using Strings for uint256;
+contract SellDrugs is ERC721Linkable {
 
     IERC721 public immutable parentContract;
 
@@ -26,9 +24,9 @@ contract E7LSellDrugs is ERC721Linkable {
     ) ERC721Linkable(_name, _symbol) {
         owner = tx.origin;
         parentContract = _parentContract;
-        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/dream-big/dream-big";
+        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/sell-drugs/sell-drugs";
     }
-
+   
     function mint(uint256 tokenId) public {
         _safeMint(msg.sender, tokenId);
     }
@@ -42,7 +40,6 @@ contract E7LSellDrugs is ERC721Linkable {
     ) public view override returns (string memory) {
         _requireMinted(tokenId);
        
-        
         return
             string(
                 abi.encodePacked(_baseURI(), ".json")
@@ -73,3 +70,4 @@ contract E7LSellDrugs is ERC721Linkable {
         BASE_URI = baseURI_;
     }
 }
+

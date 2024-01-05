@@ -7,7 +7,7 @@ async function main() {
   );
 
   await mrc.reveal();
-  await mrc.mint(1, { value: ethers.utils.parseEther("0.001") });
+  await mrc.mint(1, { value: ethers.utils.parseEther("0.000001") });
 
   console.log(await mrc.tokenURI(1));
   console.log(mrc.address);

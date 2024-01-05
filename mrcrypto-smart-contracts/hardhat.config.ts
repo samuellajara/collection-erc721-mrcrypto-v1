@@ -11,14 +11,19 @@ const config: HardhatUserConfig = {
   networks: {
     goerli: {
       url: process.env.PROVIDER_URL_GOERLI!,
-      accounts: [process.env.ACCOUNT1!],        
-    }
+      accounts: [process.env.PRIVATE_KEY!],        
+    },
+    polygonMumbai: {
+      url: process.env.PROVIDER_URL_MUMBAI!,
+      accounts: [process.env.PRIVATE_KEY!],
+    },
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN!
-  },
+    apiKey:{
+      polygonMumbai: process.env.POLYGONSCAN!,   // Your API key for Plygonscan
+      goerli: process.env.ETHERSCAN!   // Your API key for Etherscan
+    } 
+  }, 
   gasReporter: {
     currency: 'EUR',
     gasPrice: 21,
