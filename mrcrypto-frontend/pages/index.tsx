@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
-import Mint721 from '@/components/Mint_MRC'
-import MintE7L from '@/components/E7Ls'
+import Mint721 from '@/components/Mint_ERC_721'
+import MintE7L from '@/components/Mint_ERC_E7L'
 import { useEffect, useState } from 'react';
 import { useWeb3Store } from "@/stores/web3Store";
 import Error from "@/components/Error";

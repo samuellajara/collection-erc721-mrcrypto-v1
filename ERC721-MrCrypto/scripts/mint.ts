@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const MRCRYPTO = await ethers.getContractFactory("MRCRYPTO");
-  const mrc = await MRCRYPTO.attach(
-    "0xfe73e3a016964aC3F1AeeAAfc71088D97a22a0EF"
+  const MrCrypto = await ethers.getContractFactory("MrCrypto");
+  const mrc = await MrCrypto.attach(
+    "0x175BCa235261dF2f40f639CB5E34856868545A15"
   );
 
   await mrc.reveal();

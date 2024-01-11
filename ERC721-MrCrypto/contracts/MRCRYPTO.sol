@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "./Ownable.sol";
 
-contract MRCRYPTO is ERC721Enumerable, Ownable {
+contract MrCrypto is ERC721Enumerable, Ownable {
     
     using Strings for uint256;
 
@@ -26,7 +26,7 @@ contract MRCRYPTO is ERC721Enumerable, Ownable {
         string memory _symbol
     ) ERC721(_name, _symbol) {
         MAX_SUPPLY = 10000;
-        MAX_PER_USER = 5;
+        MAX_PER_USER = 4;
         baseURI = "https://apinft.racksmafia.com/api/";
         addAdmin(msg.sender);
     }

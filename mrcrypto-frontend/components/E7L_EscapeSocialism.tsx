@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useWeb3Store } from "@/stores/web3Store";
 import contractData from "../constants/constantSLD.json";
 import { ethers } from "ethers";
@@ -34,7 +34,7 @@ const Mint = () => {
       <section className="m-0-auto flex justify-center">
         <div className="mt-5 ml-5 mr-5 mb-5 bg-gray-900 p-2 rounded-sm border-2 border-gray-100  sm:w-[70%] lg:max-w-[30%]">
           <h2 className="text-center pb-2 text-2xl">Mint your E7L</h2>
-          <img src="sell-drugs.png" alt="" />
+          <img src="escape-socialism.png" alt="" />
 
           
         </div>

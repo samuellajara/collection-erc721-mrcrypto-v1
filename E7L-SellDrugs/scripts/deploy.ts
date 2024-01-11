@@ -3,7 +3,11 @@ import fs from "fs";
 
 async function main() {
   const SellDrugs = await ethers.getContractFactory("SellDrugs");
-  const sld = await SellDrugs.deploy("SellDrugs", "SLD", "0xC61046e4203bb40943525973EF7Dc170F4eeFb96");
+  const sld = await SellDrugs.deploy(
+    "SellDrugs",
+    "SLD",
+    "0x175BCa235261dF2f40f639CB5E34856868545A15"
+  );
 
   await sld.deployed();
   console.log(sld.address);
@@ -15,7 +19,7 @@ async function main() {
   };
 
   fs.writeFileSync(
-    "../mrcrypto-frontend/constants/constantSLD.json",
+    "../MrCrypto-Frontend/constants/constant_SellDrugs.json",
     JSON.stringify(constants)
   );
   console.log("Written constants");
