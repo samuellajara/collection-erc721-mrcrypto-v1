@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
-import Mint721 from '@/components/Mint_ERC_721'
-import MintE7L from '@/components/Mint_ERC_E7L'
+import Mint_ERC_721 from '@/components/Mint_ERC_721'
+import Mint_ERC_E7L from '@/components/Mint_ERC_E7L'
 import { useEffect, useState } from 'react';
 import { useWeb3Store } from "@/stores/web3Store";
 import Error from "@/components/Error";
@@ -24,8 +24,11 @@ export default function Home() {
       <main>
         <Navbar connectWallet={connectWallet} />
         <Error />
-        <Mint721 />
-        <MintE7L />
+        <section className='flex'>
+          <div className='w-1/2 bg-red-600'><Mint_ERC_721 /></div>
+          <div className='w-1/2 bg-blue-500'><Mint_ERC_E7L /></div>
+        </section>
+        
       </main>
     </>
   )

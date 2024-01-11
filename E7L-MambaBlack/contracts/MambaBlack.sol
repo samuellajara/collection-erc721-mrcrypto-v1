@@ -3,7 +3,7 @@ pragma solidity ^0.8.7;
 
 import "erc721l/contracts/ERC721Linkable.sol";
 
-contract SellDrugs is ERC721Linkable {
+contract MambaBlack is ERC721Linkable {
 
     IERC721 public immutable parentContract;
 
@@ -24,7 +24,7 @@ contract SellDrugs is ERC721Linkable {
     ) ERC721Linkable(_name, _symbol) {
         owner = tx.origin;
         parentContract = _parentContract;
-        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/sell-drugs/sell-drugs";
+        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/mamba-black/mamba-black";
     }
    
     function mint(uint256 tokenId) public {
