@@ -11,7 +11,7 @@ async function main() {
 
   await mbb.deployed();
   console.log(mbb.address);
-  await mbb.mint(1);
+  await mbb.mint();
 
   const constants = {
     address: mbb.address,
