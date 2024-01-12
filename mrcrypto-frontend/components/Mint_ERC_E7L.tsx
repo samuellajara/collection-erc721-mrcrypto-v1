@@ -9,9 +9,9 @@ const Mint = () => {
 
   return (
     <section className="flex flex-row">
-      <div className="bg-red-400"> <E7L_BigDream /> </div> 
-      <div className="bg-yellow-500"><E7L_EscapeSocialism /></div> 
-      <div className="bg-pink-500"><E7L_SellDrugs /></div> 
+      <div className=""><E7L_BigDream /> </div> 
+      <div className=""><E7L_EscapeSocialism /></div> 
+      <div className=""><E7L_SellDrugs /></div> 
     </section>
   );
 };

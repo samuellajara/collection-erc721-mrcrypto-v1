@@ -11,7 +11,7 @@ async function main() {
 
   await dmb.deployed();
   console.log(dmb.address);
-  await dmb.mint(1);
+  await dmb.mint();
 
   const constants = {
     address: dmb.address,

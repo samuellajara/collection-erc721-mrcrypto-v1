@@ -11,6 +11,7 @@ contract EscapeSocialism is ERC721Linkable {
     
     address public owner;
     string private BASE_URI;
+    uint256 private supply = 0;
     
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
@@ -27,8 +28,9 @@ contract EscapeSocialism is ERC721Linkable {
         BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/escape-socialism-hoodie/escape-socialism-hoodie";
     }
    
-    function mint(uint256 tokenId) public {
-        _safeMint(msg.sender, tokenId);
+    function mint() public {
+        supply++;
+        _safeMint(msg.sender, supply);
     }
 
     function _baseURI() internal view override returns (string memory) {

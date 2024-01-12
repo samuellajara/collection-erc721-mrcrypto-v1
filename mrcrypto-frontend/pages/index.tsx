@@ -25,8 +25,8 @@ export default function Home() {
         <Navbar connectWallet={connectWallet} />
         <Error />
         <section className='flex'>
-          <div className='w-1/2 bg-red-600'><Mint_ERC_721 /></div>
-          <div className='w-1/2 bg-blue-500'><Mint_ERC_E7L /></div>
+          <div className='w-1/2'><Mint_ERC_721 /></div>
+          <div className='w-1/2'><Mint_ERC_E7L /></div>
         </section>
         
       </main>

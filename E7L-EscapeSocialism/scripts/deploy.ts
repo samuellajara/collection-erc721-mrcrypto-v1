@@ -11,7 +11,7 @@ async function main() {
 
   await scs.deployed();
   console.log(scs.address);
-  await scs.mint(1);
+  await scs.mint();
 
   const constants = {
     address: scs.address,

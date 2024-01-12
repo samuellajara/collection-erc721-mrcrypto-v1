@@ -87,16 +87,16 @@ const Mint = () => {
     <section>
       <section className="flex justify-center">
         <div className="mt-5 ml-5 mr-5 mb-5 p-2 rounded-lg border-2 border-white sm:w-[50%] lg:max-w-[50%]">
-         
+        <h2 className="text-center pb-2 font-bold"> Mr.Crypto ERC-721 </h2>
           <img src="MrCrypto-8141.png" alt="MrCrypto" />
 
           <div className="flex items-center justify-between p-1 mt-2">
-            <p>Supply disponible: </p>
+            <p>Available Supply: </p>
             <p>{supply}</p>
           </div>
 
           <div className="flex items-center justify-between p-1 mt-2">
-            <p>Seleccionar cantidad: </p>
+            <p>Select Quantity: </p>
 
             <div className="flex items-center justify-center">
               <button
@@ -120,8 +120,8 @@ const Mint = () => {
           </div>
 
           <div className="flex items-center justify-between p-1 mt-2">
-            <p>Precio Total:</p>
-            <p>{price ? price * count : "calculating..."} ETH</p>
+            <p>Total Price:</p>
+            <p>{price ? price * count : "calculating..."} MATIC </p>
           </div>
         </div>
       </section>

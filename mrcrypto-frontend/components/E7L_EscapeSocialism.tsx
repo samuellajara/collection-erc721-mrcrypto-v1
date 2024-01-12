@@ -33,7 +33,7 @@ const Mint = () => {
     <section>
       <section className="flex justify-center">
         <div className="mt-5 ml-5 mr-5 mb-5 p-2 rounded-lg border-2 border-white  sm:w-[90%] lg:max-w-[70%]">
-          <h2 className="text-center pb-2">Mint your E7L</h2>
+          <h2 className="text-center pb-2 font-bold">Escape Socialism E7L</h2>
           <img src="escape-socialism.png" alt="" />
 
           
