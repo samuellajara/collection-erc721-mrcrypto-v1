@@ -45,7 +45,7 @@ const Mint = () => {
   return (
     <section className="rounded-lg border-2 border-white">
       <section className="flex justify-center">
-        <div className="mb-3 p-2 sm:w-[90%] lg:max-w-[90%]">
+        <div className="mb-3 p-2 sm:w-[70%] lg:max-w-[70%]">
           <h2 className="text-center pb-2 font-bold">Dream Big E7L</h2>
           <img src="dream-big.png" alt="Image Dream Big" />
         </div>

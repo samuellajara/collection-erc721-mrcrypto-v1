@@ -8,10 +8,10 @@ const Mint = () => {
 
 
   return (
-    <section className="flex flex-row">
-      <div className=""><E7L_BigDream /> </div> 
-      <div className=""><E7L_EscapeSocialism /></div> 
-      <div className=""><E7L_SellDrugs /></div> 
+    <section className="flex flex-row mr-10 mt-10">
+      <div className="mr-5"><E7L_BigDream /> </div> 
+      <div className="mr-5"><E7L_EscapeSocialism /></div> 
+      <div className="mr-5"><E7L_SellDrugs /></div> 
     </section>
   );
 };
