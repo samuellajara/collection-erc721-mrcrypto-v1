@@ -33,12 +33,22 @@ contract DreamBig is ERC721Linkable {
         _safeMint(msg.sender, supply);
     }
 
-
     function _baseURI() internal view override returns (string memory) {
         return BASE_URI;
     }
     
-    function tokenURI() public view returns (string memory) {
+    function _exists(uint256 tokenId) internal view virtual returns (bool) {
+        return _ownerOf(tokenId) != address(0);
+    }
+  
+    function _requireMinted(uint256 tokenId) internal view virtual {
+        require(_exists(tokenId), "ERC721: invalid token ID");
+    }
+
+    function tokenURI(
+        uint256 tokenId
+    ) public view override returns (string memory) {
+        _requireMinted(tokenId);
         return
             string(
                 abi.encodePacked(_baseURI(), ".json")

@@ -31,12 +31,12 @@ const Mint = () => {
     }
 
     if (!provider) return;
-    const signer = provider.getSigner();
+    /*const signer = provider.getSigner();
     const isWhitelisted = await checkWhitelist(signer);
     if (!isWhitelisted) {
       console.log("User is not whitelisted");
       return;
-    }
+    }*/
 
     try {
       const totalPrice = count * price;
@@ -87,7 +87,7 @@ const Mint = () => {
     <section>
       <section className="flex justify-center">
         <div className="mt-5 ml-5 mr-5 mb-5 p-2 rounded-lg border-2 border-white sm:w-[50%] lg:max-w-[50%]">
-        <h2 className="text-center pb-2 font-bold"> Mr.Crypto ERC-721 </h2>
+          <h2 className="text-center pb-2 font-bold"> Mr.Crypto ERC-721 </h2>
           <img src="MrCrypto-8141.png" alt="MrCrypto" />
 
           <div className="flex items-center justify-between p-1 mt-2">

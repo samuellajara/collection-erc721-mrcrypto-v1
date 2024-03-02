@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import "erc721l/contracts/ERC721Linkable.sol";
 
-contract DreamBig is ERC721Linkable {
+contract EscapeSocialism is ERC721Linkable {
 
     IERC721 public immutable parentContract;
 
@@ -25,7 +25,7 @@ contract DreamBig is ERC721Linkable {
     ) ERC721Linkable(_name, _symbol) {
         owner = tx.origin;
         parentContract = _parentContract;
-        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/dream-big/dream-big";
+        BASE_URI = "https://mrcrypto-sources.s3.eu-central-1.amazonaws.com/3-0/escape-socialism-hoodie/escape-socialism-hoodie";
     }
    
     function mint() public {
@@ -33,12 +33,22 @@ contract DreamBig is ERC721Linkable {
         _safeMint(msg.sender, supply);
     }
 
-
     function _baseURI() internal view override returns (string memory) {
         return BASE_URI;
     }
     
-    function tokenURI() public view returns (string memory) {
+    function _exists(uint256 tokenId) internal view virtual returns (bool) {
+        return _ownerOf(tokenId) != address(0);
+    }
+  
+    function _requireMinted(uint256 tokenId) internal view virtual {
+        require(_exists(tokenId), "ERC721: invalid token ID");
+    }
+
+    function tokenURI(
+        uint256 tokenId
+    ) public view override returns (string memory) {
+        _requireMinted(tokenId);
         return
             string(
                 abi.encodePacked(_baseURI(), ".json")
@@ -48,7 +58,7 @@ contract DreamBig is ERC721Linkable {
     function tokenInfo(
         uint256 tokenId
     ) public view virtual override returns (LinkableToken memory) {
-        require(_ownerOf(tokenId) != address(0), "ERC721: invalid token ID");
+        require(_exists(tokenId) == true, "ERC721: invalid token ID");
         return _tokensInfo[tokenId];
     }
 
