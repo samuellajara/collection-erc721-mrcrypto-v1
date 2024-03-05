@@ -38,6 +38,15 @@ const Mint = () => {
     }
   }
 
+  async function sync() {
+    try {
+      await nftcontractSigner.syncToken(e7lTokenId);
+      console.log("sync e7l... its okey");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     if (!provider) return;
   }, [provider]);
@@ -91,6 +100,16 @@ const Mint = () => {
           LINK
         </button>
       </section>
+
+      <section className="flex justify-center">
+        <button
+          className="bg-orange-500 hover:bg-orange-700 text-white font-bold mb-5 py-2 px-4 rounded"
+          onClick={sync}
+        >
+          SYNC
+        </button>
+      </section>
+      
     </section>
   );
 };
