@@ -8,14 +8,14 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.24",
   networks: {
-    polygonMumbai: {
-      url: process.env.PROVIDER_URL_MUMBAI!,
+    polygonTesnet: {
+      url: process.env.PROVIDER_URL_AMOY!,
       accounts: [process.env.PRIVATE_KEY!],
     },
   },
   etherscan: {
     apiKey: {
-      polygonMumbai: process.env.POLYGONSCAN!, // Your API key for Plygonscan
+      polygonTesnet: process.env.POLYGONSCAN!, // Your API key for Plygonscan
     },
   },
   gasReporter: {

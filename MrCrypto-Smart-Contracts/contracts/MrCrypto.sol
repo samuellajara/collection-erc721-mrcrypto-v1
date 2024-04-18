@@ -17,27 +17,22 @@ contract MrCrypto is ERC721Enumerable, Ownable {
     uint16 public immutable MAX_SUPPLY;
     uint8 public immutable MAX_PER_USER;
     uint public COST_PER_NFT = 0.000001 ether;
-    uint public COST_PER_NFT_MOCK_TOKEN = 0.000001 ether ;
     bool public whitelistOn = false;
     bool public paused = false;
     bool public revealed = true;
     string public baseURI;
-    
-    IERC20 public mockToken;
     
     mapping(address => bool) public isWhitelisted;
     mapping(address => uint) public userMints;
     
     constructor(
         string memory _name,
-        string memory _symbol,
-        address _mockTokenAddress
+        string memory _symbol
     ) ERC721(_name, _symbol) {
         MAX_SUPPLY = 10000;
         MAX_PER_USER = 4;
         baseURI = "https://apinft.racksmafia.com/api/";
         addAdmin(msg.sender);
-        mockToken = IERC20(_mockTokenAddress);
     }
 
     function addToWhitelist(address whitelistedUser) external onlyAdmin {
@@ -46,16 +41,6 @@ contract MrCrypto is ERC721Enumerable, Ownable {
 
     function flipPause() external onlyAdmin {
         paused = !paused;
-    }
-
-    function mintWithMockToken(uint amount) external {
-        uint totalCost = amount * COST_PER_NFT_MOCK_TOKEN;
-        require(mockToken.balanceOf(msg.sender) >= totalCost, "Insufficient mock tokens");
-        uint256 allowance = mockToken.allowance(msg.sender, address(this));
-        require(allowance >= totalCost, "Check the token allowance. Please approve tokens before minting.");
-        require(mockToken.transferFrom(msg.sender, address(this), totalCost), "Transfer of mock tokens failed");
-
-        _mint(amount);
     }
 
     function mint(uint amount) external payable {
