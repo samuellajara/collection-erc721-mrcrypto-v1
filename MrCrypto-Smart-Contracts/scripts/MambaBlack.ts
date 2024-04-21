@@ -1,25 +1,26 @@
 import hre from "hardhat";
 import fs from "fs";
 
-// ERC721 DEPLOYED AT "0xc11606518dbf7d2891797f01b7cb03149cfca899"
+// MambaBlack DEPLOYED AT "0x6617df64efea9cf365cc22ce4207c9ac1545a21c"
 
 async function main() {
-  const mrCrypto = await hre.viem.deployContract("MrCrypto", [
-    "MrCrypto",
-    "MRC",
+  const e7l = await hre.viem.deployContract("MambaBlack", [
+    "MambaBlack",
+    "MBB",
+    "0xc11606518dbf7d2891797f01b7cb03149cfca899",
   ]);
 
   const constants = {
-    address: mrCrypto.address,
-    abi: mrCrypto.abi,
+    address: e7l.address,
+    abi: e7l.abi,
   };
 
   fs.writeFileSync(
-    "../MrCrypto-Frontend/constants/constant_MrCrypto.json",
+    "../MrCrypto-Frontend/constants/MambaBlack.json",
     JSON.stringify(constants)
   );
 
-  console.log("Address: ", mrCrypto.address);
+  console.log("Address: ", e7l.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
