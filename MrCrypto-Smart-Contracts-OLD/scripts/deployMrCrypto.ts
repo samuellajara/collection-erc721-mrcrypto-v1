@@ -5,13 +5,10 @@ import fs from "fs";
 
 async function main() {
 
-  const [deployer] = await ethers.getSigner();
-  console.log("Deploying contracts with the account:", deployer.address);
-
   const MrCrypto = await ethers.getContractFactory("MrCrypto");
   const mrc = await MrCrypto.deploy("MrCrypto", "MRC");
- 
-  const constants = {
+  await mrc.deploymentTransaction();
+ /* const constants = {
     address: await mrc.getAddress(),
     abi: mrc.interface.formatJson()
   };
@@ -23,7 +20,7 @@ async function main() {
 
   console.log("Written constants");
   console.log("Address: ", await mrc.getAddress());
-
+*/
 }
 
 // We recommend this pattern to be able to use async/await everywhere
