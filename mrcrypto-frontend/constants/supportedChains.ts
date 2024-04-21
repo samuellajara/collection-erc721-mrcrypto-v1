@@ -1,1 +1,1 @@
-export const supportedChains = [80001]; // Polygon Mumbai
+export const supportedChains = [11155111]; // Ethereum Sepolia

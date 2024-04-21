@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useWeb3Store } from "@/stores/web3Store";
-import contractData from "../constants/constant_DreamBig.json";
-import contractDataERC721 from "../constants/constant_MrCrypto.json";
+import contractData from "../constants/DreamBig.json";
+import contractDataERC721 from "../constants/MrCrypto.json";
 import { ethers } from "ethers";
 
 const Mint = () => {

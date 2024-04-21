@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useWeb3Store } from "@/stores/web3Store";
-import contractData from "../constants/constant_MrCrypto.json";
+import contractData from "../constants/MrCrypto.json";
 import { ethers } from "ethers";
 
 const Mint = () => {
