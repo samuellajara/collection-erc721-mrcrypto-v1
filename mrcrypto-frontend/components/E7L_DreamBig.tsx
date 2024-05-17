@@ -18,7 +18,7 @@ const Mint = () => {
   async function getMint() {
     if (!nftcontractSigner) return;
     if (!provider) return;
-
+    
     try {
       await nftcontractSigner.mint();
     } catch (error) {

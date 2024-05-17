@@ -9,6 +9,7 @@ const config: HardhatUserConfig = {
     polygonAmoy: {
       url: process.env.PROVIDER_URL_AMOY!,
       accounts: [process.env.PRIVATE_KEY_2!],
+      chainId: 80002, // El Chain ID de tu red personalizada
     },
     sepolia: {
       url: process.env.PROVIDER_URL_SEPOLIA!,
@@ -20,6 +21,16 @@ const config: HardhatUserConfig = {
       polygonAmoy: process.env.POLYGONSCAN!, // Your API key for Plygonscan
       sepolia: process.env.ETHERSCAN!,
     },
+    customChains: [
+      {
+        network: "polygonAmoy",
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://www.oklink.com/amoy",
+        },
+      },
+    ],
   },
 };
 

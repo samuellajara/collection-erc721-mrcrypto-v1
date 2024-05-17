@@ -31,7 +31,7 @@ const Mint = () => {
     }
 
     if (!provider) return;
-    /*const signer = provider.getSigner();
+    /*ççconst signer = provider.getSigner();
     const isWhitelisted = await checkWhitelist(signer);
     if (!isWhitelisted) {
       console.log("User is not whitelisted");
