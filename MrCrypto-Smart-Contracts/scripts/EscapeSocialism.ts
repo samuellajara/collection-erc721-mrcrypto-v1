@@ -1,13 +1,13 @@
 import hre from "hardhat";
 import fs from "fs";
 
-// MambaBlack DEPLOYED AT "0x93ece6442b3494d3470b6b3393396d4224b37d07"
+// MambaBlack DEPLOYED AT "0x4e3534f28938180e13a3b9efda08cea0d5d0751c"
 
 async function main() {
   const e7l = await hre.viem.deployContract("EscapeSocialism", [
     "EscapeSocialism",
     "SCS",
-    "0xc11606518dbf7d2891797f01b7cb03149cfca899",
+    "0x7fb498a6a1cd614600e2fff193b514e83a519b0c",
   ]);
 
   const constants = {
@@ -16,7 +16,7 @@ async function main() {
   };
 
   fs.writeFileSync(
-    "../MrCrypto-Frontend/constants/MambaBlack.json",
+    "../MrCrypto-Frontend/constants/EscapeSocialism.json",
     JSON.stringify(constants)
   );
 

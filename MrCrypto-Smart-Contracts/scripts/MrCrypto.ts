@@ -1,7 +1,8 @@
 import hre from "hardhat";
 import fs from "fs";
 
-// ERC721 DEPLOYED AT "0xc11606518dbf7d2891797f01b7cb03149cfca899"
+// ERC721 DEPLOYED AT SEPOLIA "0xc11606518dbf7d2891797f01b7cb03149cfca899"
+// ERC721 DEPLOYED AT AMOY "0x7fb498a6a1cd614600e2fff193b514e83a519b0c"
 
 async function main() {
   const mrCrypto = await hre.viem.deployContract("MrCrypto", [

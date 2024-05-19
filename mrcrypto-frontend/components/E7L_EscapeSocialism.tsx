@@ -55,7 +55,7 @@ const Mint = () => {
     <section className="rounded-lg border-2 border-white">
       <section className="flex justify-center">
         <div className="mb-3 p-2 sm:w-[70%] lg:max-w-[70%]">
-          <h2 className="text-center pb-2 font-bold">Escape Socialism E7L</h2>
+          <h2 className="text-center pb-2 font-bold">Escape Socialism</h2>
           <img src="escape-socialism.png" alt="Image Escape Socialism" />
         </div>
       </section>

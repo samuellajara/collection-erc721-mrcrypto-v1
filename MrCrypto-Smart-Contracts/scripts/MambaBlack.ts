@@ -1,13 +1,13 @@
 import hre from "hardhat";
 import fs from "fs";
 
-// MambaBlack DEPLOYED AT "0x6617df64efea9cf365cc22ce4207c9ac1545a21c"
+// MambaBlack DEPLOYED AT "0x09c56adf48c89586e4965b71bb9c4cb67bd89cea"
 
 async function main() {
   const e7l = await hre.viem.deployContract("MambaBlack", [
     "MambaBlack",
     "MBB",
-    "0xc11606518dbf7d2891797f01b7cb03149cfca899",
+    "0x7fb498a6a1cd614600e2fff193b514e83a519b0c",
   ]);
 
   const constants = {

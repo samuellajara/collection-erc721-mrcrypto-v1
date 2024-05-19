@@ -1,13 +1,13 @@
 import hre from "hardhat";
 import fs from "fs";
 
-// MambaBlack DEPLOYED AT "0x007566e2d810ebe752f16b1af931322106398d1d"
+// MambaBlack DEPLOYED AT "0x7ee331c64ba5ebf829e6d9f02c6dcb44dfe86c0e"
 
 async function main() {
   const e7l = await hre.viem.deployContract("DreamBig", [
     "DreamBig",
     "DMB",
-    "0xc11606518dbf7d2891797f01b7cb03149cfca899",
+    "0x7fb498a6a1cd614600e2fff193b514e83a519b0c",
   ]);
 
   const constants = {
@@ -16,7 +16,7 @@ async function main() {
   };
 
   fs.writeFileSync(
-    "../MrCrypto-Frontend/constants/MambaBlack.json",
+    "../MrCrypto-Frontend/constants/DreamBig.json",
     JSON.stringify(constants)
   );
 
