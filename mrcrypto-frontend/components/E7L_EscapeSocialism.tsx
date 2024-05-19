@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useWeb3Store } from "@/stores/web3Store";
-import contractData from "../constants/constant_EscapeSocialism.json";
-import contractDataERC721 from "../constants/constant_MrCrypto.json";
+import contractData from "../constants/EscapeSocialism.json";
+import contractDataERC721 from "../constants/MrCrypto.json";
 import { ethers } from "ethers";
 
 const Mint = () => {
@@ -38,6 +38,15 @@ const Mint = () => {
     }
   }
 
+  async function sync() {
+    try {
+      await nftcontractSigner.syncToken(e7lTokenId);
+      console.log("sync e7l... its okey");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     if (!provider) return;
   }, [provider]);
@@ -46,7 +55,7 @@ const Mint = () => {
     <section className="rounded-lg border-2 border-white">
       <section className="flex justify-center">
         <div className="mb-3 p-2 sm:w-[70%] lg:max-w-[70%]">
-          <h2 className="text-center pb-2 font-bold">Escape Socialism E7L</h2>
+          <h2 className="text-center pb-2 font-bold">Escape Socialism</h2>
           <img src="escape-socialism.png" alt="Image Escape Socialism" />
         </div>
       </section>
@@ -91,6 +100,16 @@ const Mint = () => {
           LINK
         </button>
       </section>
+
+      <section className="flex justify-center">
+        <button
+          className="bg-orange-500 hover:bg-orange-700 text-white font-bold mb-5 py-2 px-4 rounded"
+          onClick={sync}
+        >
+          SYNC
+        </button>
+      </section>
+      
     </section>
   );
 };
